@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VocabMaster - English Word Game</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <meta name="description" content="A simple and elegant English vocabulary game based on study notes.">
+</head>
+<body>
+    <div id="app" class="app-container">
+        <!-- Main Screen -->
+        <header>
+            <h1>VocabMaster</h1>
+            <p>Master your units with ease</p>
+        </header>
+
+        <main id="main-content">
+            <!-- Screen: Unit Selection -->
+            <section id="selection-screen" class="screen active">
+                <h2>Select a Unit</h2>
+                <div class="unit-grid" id="unit-grid">
+                    <!-- Units will be injected here -->
+                </div>
+            </section>
+
+            <!-- Screen: Game Mode Selection -->
+            <section id="mode-screen" class="screen">
+                <button class="back-btn" onclick="showScreen('selection-screen')">← Back</button>
+                <h2 id="selected-unit-title">Unit X</h2>
+                
+                <div class="settings-group">
+                    <label>How many questions?</label>
+                    <div class="chip-group" id="quiz-length-selector">
+                        <button class="chip active" onclick="setQuizLength(5)">5</button>
+                        <button class="chip" onclick="setQuizLength(10)">10</button>
+                        <button class="chip" onclick="setQuizLength(20)">20</button>
+                        <button class="chip" onclick="setQuizLength('all')">All</button>
+                    </div>
+                </div>
+
+                <div class="mode-options">
+                    <div class="mode-card" onclick="startGame('flashcards')">
+                        <div class="icon">🎴</div>
+                        <h3>Flashcards</h3>
+                        <p>Learn and memorize at your own pace.</p>
+                    </div>
+                    <div class="mode-card" onclick="startGame('quiz')">
+                        <div class="icon">📝</div>
+                        <h3>Quiz</h3>
+                        <p>Test your knowledge with your selected count.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Screen: Flashcards -->
+            <section id="flashcard-screen" class="screen">
+                <button class="back-btn" onclick="showScreen('mode-screen')">← Back</button>
+                <div class="card-container">
+                    <div class="flashcard" id="flashcard" onclick="this.classList.toggle('flipped')">
+                        <div class="card-face front">
+                            <span class="word" id="flash-front">Word</span>
+                        </div>
+                        <div class="card-face back">
+                            <span class="meaning" id="flash-back">Meaning</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="controls">
+                    <button class="btn sekundary" onclick="prevCard()">Previous</button>
+                    <span id="card-progress">1 / X</span>
+                    <button class="btn secondary" onclick="nextCard()">Next</button>
+                </div>
+            </section>
+
+            <!-- Screen: Quiz -->
+            <section id="quiz-screen" class="screen">
+                <div class="quiz-header">
+                    <button class="back-btn" onclick="showScreen('mode-screen')">← Quit</button>
+                    <div class="score-display">Score: <span id="current-score">0</span></div>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="quiz-progress-fill"></div>
+                </div>
+                <div class="question-container">
+                    <h3 id="quiz-question">How do you say "Word" in Turkish?</h3>
+                    <div class="options-grid" id="options-grid">
+                        <!-- Options injected here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Screen: Results -->
+            <section id="result-screen" class="screen">
+                <div class="result-card">
+                    <div class="result-icon">🎉</div>
+                    <h2>Well Done!</h2>
+                    <p>Your final score:</p>
+                    <div class="final-score" id="final-score">8 / 10</div>
+                    <button class="btn primary" onclick="showScreen('selection-screen')">Play Again</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 VocabMaster | Simple & Smart</p>
+        </footer>
+    </div>
+
+    <!-- Background Decoration -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
