@@ -1,4 +1,25 @@
 const VOCAB_DATA = {
+    "Unit 1": [
+        ["prior", "önceki, -den önce"], ["examine", "incelemek, muayene etmek"], ["thanks to", "...sayesinde"],
+        ["crops", "mahsuller, ekinler"], ["valuable", "değerli, kıymetli"], ["variety", "çeşitlilik, çeşit, tür"],
+        ["labour", "emek, iş gücü"], ["quantities", "miktarlar"], ["lorry", "kamyon"],
+        ["beneficial", "faydalı, yararlı"], ["incentive", "teşvik, özendirici etken"], ["permit", "izin vermek / izin belgesi"],
+        ["rebate", "indirim, iade"], ["appeal", "çekicilik, çağrı / cezbetmek"], ["ripening", "olgunlaşma"],
+        ["component", "bileşen, unsur"], ["pressure", "baskı, basınç"], ["encounter", "karşılaşmak, rastlamak"],
+        ["conflict", "çatışmak, anlaşmazlığa düşmek"], ["compose", "oluşturmak, bestelemek"]
+    ],
+    "Essay - Unit 1": [
+        ["accelerated", "hızlandırılmış, ivme kazanmış"], ["adoption", "benimseme, kabul etme"], ["affiliated", "bağlı, ilişkili"],
+        ["attributed to", "atfedilen, kaynaklanan"], ["commodity", "ticari mal, emtia"], ["conducted", "yürütülen, gerçekleştirilen"],
+        ["connotes", "çağrıştırır, ifade eder"], ["convergence", "yakınsama, birleşme"], ["conveying", "iletme, aktarma"],
+        ["deliberate", "kasıtlı, planlı"], ["deprived", "yoksun bırakılmış, mahrum"], ["disparity", "eşitsizlik, farklılık"],
+        ["embrace", "kucaklamak, benimsemek"], ["expedite", "hızlandırmak, kolaylaştırmak"], ["intensity", "yoğunluk, şiddet"],
+        ["interventionist", "müdahaleci"], ["involves", "içerir, kapsar"], ["openness", "açıklık, şeffaflık"],
+        ["penetrate", "nüfuz etmek, sızmak"], ["penetration", "nüfuz etme, sızma"], ["rural", "kırsal"],
+        ["tariffs", "gümrük vergileri, tarifeler"], ["tendency", "eğilim, meyil"], ["unevenly", "eşitsiz bir şekilde"],
+        ["unprecedented", "eşi benzeri görülmemiş"], ["venture", "girişmek, riskli girişim"], ["hence", "bu nedenle, bundan dolayı"],
+        ["compete", "rekabet etmek, yarışmak"], ["facilitating", "kolaylaştıran, olanak sağlayan"], ["cope", "başa çıkmak, üstesinden gelmek"]
+    ],
     "Unit 4": [
         ["remarkable", "dikkat çekici"], ["commitment", "bağlılık"], ["strive", "çaba"],
         ["foster", "teşvik"], ["solely", "yalnızca"], ["prominent", "belirgin"],
