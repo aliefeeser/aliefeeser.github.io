@@ -6,7 +6,13 @@ const VOCAB_DATA = {
         ["beneficial", "faydalı, yararlı"], ["incentive", "teşvik, özendirici etken"], ["permit", "izin vermek / izin belgesi"],
         ["rebate", "indirim, iade"], ["appeal", "çekicilik, çağrı / cezbetmek"], ["ripening", "olgunlaşma"],
         ["component", "bileşen, unsur"], ["pressure", "baskı, basınç"], ["encounter", "karşılaşmak, rastlamak"],
-        ["conflict", "çatışmak, anlaşmazlığa düşmek"], ["compose", "oluşturmak, bestelemek"]
+        ["conflict", "çatışmak, anlaşmazlığa düşmek"], ["compose", "oluşturmak, bestelemek"],
+        ["consumer", "tüketici"], ["cost", "maliyet"], ["discount", "indirim"], ["domestic", "yerli, iç"],
+        ["export", "ihraç etmek"], ["goods", "mallar, ürünler"], ["greenhouse", "sera"], ["import", "ithal etmek"],
+        ["investigate", "araştırmak, incelemek"], ["multinational", "çok uluslu"], ["outsourcing", "dış kaynak kullanımı"],
+        ["overseas", "yurtdışı"], ["produce", "üretmek / ürün"], ["production costs", "üretim maliyetleri"],
+        ["profit", "kâr"], ["prosperity", "refah"], ["purchase", "satın almak"], ["supply chain", "tedarik zinciri"],
+        ["transport", "ulaşım, taşımacılık"]
     ],
     "Essay - Unit 1": [
         ["accelerated", "hızlandırılmış, ivme kazanmış"], ["adoption", "benimseme, kabul etme"], ["affiliated", "bağlı, ilişkili"],
@@ -19,6 +25,22 @@ const VOCAB_DATA = {
         ["tariffs", "gümrük vergileri, tarifeler"], ["tendency", "eğilim, meyil"], ["unevenly", "eşitsiz bir şekilde"],
         ["unprecedented", "eşi benzeri görülmemiş"], ["venture", "girişmek, riskli girişim"], ["hence", "bu nedenle, bundan dolayı"],
         ["compete", "rekabet etmek, yarışmak"], ["facilitating", "kolaylaştıran, olanak sağlayan"], ["cope", "başa çıkmak, üstesinden gelmek"]
+    ],
+    "Unit 2": [
+        ["adviser", "danışman"], ["campus", "kampüs"], ["complex", "karmaşık"], ["emphasis", "vurgu, önem"],
+        ["innovation", "yenilik, inovasyon"], ["institution", "kurum, kuruluş"], ["manual", "manuel, el ile"],
+        ["medical", "tıbbi"], ["physical", "fiziksel"], ["practical", "pratik, uygulamalı"],
+        ["professional", "profesyonel"], ["reference", "referans"], ["requirements", "gereksinimler"],
+        ["secure", "güvenli"], ["statement", "ifade, açıklama"], ["technical", "teknik"]
+    ],
+    "Unit 3": [
+        ["aid", "yardım"], ["antibiotic", "antibiyotik"], ["balance", "denge"], ["clinical", "klinik"],
+        ["contaminated", "kirlenmiş, kirli"], ["data", "veri"], ["in favour of", "lehine, destekleyen"],
+        ["infected", "enfekte, bulaşmış"], ["occur", "meydana gelmek"], ["outbreak", "salgın"],
+        ["precaution", "önlem, tedbir"], ["prescription", "reçete"], ["prevention", "önleme"],
+        ["prove", "kanıtlamak"], ["recover", "iyileşmek"], ["researcher", "araştırmacı"],
+        ["therapy", "terapi, tedavi"], ["treat", "tedavi etmek"], ["treatment", "tedavi"],
+        ["trial", "deneme"], ["urgent", "acil"], ["vaccine", "aşı"], ["virus", "virüs"], ["wound", "yara"]
     ],
     "Unit 4": [
         ["remarkable", "dikkat çekici"], ["commitment", "bağlılık"], ["strive", "çaba"],
@@ -38,7 +60,13 @@ const VOCAB_DATA = {
         ["maintenance", "bakım"], ["concern", "endişe"], ["irrigation", "sulama"],
         ["mitigation", "hafifletme"], ["cohesive", "uyumlu"], ["illuminating", "aydınlatıcı"],
         ["aware", "farkında"], ["tackle", "mücadele"], ["drought", "kuraklık"],
-        ["indeed", "gerçekten"], ["agenda", "gündem"], ["fragile", "kırılgan"]
+        ["indeed", "gerçekten"], ["agenda", "gündem"], ["fragile", "kırılgan"],
+        ["adapt", "uyum sağlamak"], ["affect", "etkilemek"], ["apply", "uygulamak"],
+        ["conservation", "koruma, muhafaza"], ["decline", "azalmak, düşmek"], ["diamond", "elmas"],
+        ["extract", "çıkarmak"], ["habitat", "yaşam alanı"], ["impact", "etki, etkilemek"],
+        ["mineral", "mineral, maden"], ["modify", "değiştirmek"], ["natural gas", "doğal gaz"],
+        ["support", "desteklemek"], ["survive", "hayatta kalmak"], ["waste", "atık, israf"],
+        ["wilderness", "vahşi doğa"]
     ],
     "Unit 5": [
         ["stately", "görkemli"], ["utmost", "en üst düzeyde"], ["contemporary", "çağdaş"],
