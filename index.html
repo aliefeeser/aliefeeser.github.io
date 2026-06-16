@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VocabMaster - English Word Game</title>
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -25,11 +25,37 @@
                 <div class="unit-grid" id="unit-grid">
                     <!-- Units will be injected here -->
                 </div>
+                <div class="mix-btn-wrapper">
+                    <button class="mix-btn" onclick="showMixScreen()">
+                        <span class="mix-icon">🔀</span> Mix Mode
+                    </button>
+                </div>
+            </section>
+
+            <!-- Screen: Mix Config -->
+            <section id="mix-screen" class="screen">
+                <button class="back-btn" onclick="showScreen('selection-screen')">← Back</button>
+                <h2>Mix Mode</h2>
+                <p class="mix-subtitle">Select units to mix</p>
+                <div class="mix-unit-grid" id="mix-unit-grid">
+                    <!-- Checkboxes injected here -->
+                </div>
+                <div class="settings-group">
+                    <label>How many words?</label>
+                    <div class="chip-group" id="mix-count-selector">
+                        <button class="chip" onclick="setMixCount(10)">10</button>
+                        <button class="chip" onclick="setMixCount(20)">20</button>
+                        <button class="chip active" onclick="setMixCount(30)">30</button>
+                        <button class="chip" onclick="setMixCount(50)">50</button>
+                        <button class="chip" onclick="setMixCount('all')">All</button>
+                    </div>
+                </div>
+                <button class="btn primary start-mix-btn" id="start-mix-btn" onclick="startMix()">Start</button>
             </section>
 
             <!-- Screen: Flashcards -->
             <section id="flashcard-screen" class="screen">
-                <button class="back-btn" onclick="showScreen('selection-screen')">← Back</button>
+                <button class="back-btn" id="flashcard-back-btn" onclick="goBackFromFlashcard()">← Back</button>
                 <div class="card-container">
                     <div class="flashcard" id="flashcard" onclick="this.classList.toggle('flipped')">
                         <div class="card-face front">
@@ -57,6 +83,6 @@
     <div class="bg-blob blob-1"></div>
     <div class="bg-blob blob-2"></div>
 
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>

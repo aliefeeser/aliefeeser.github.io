@@ -128,6 +128,9 @@ const VOCAB_DATA = {
 let currentUnit = null;
 let currentWords = [];
 let currentIndex = 0;
+let flashcardOrigin = 'selection'; // 'selection' or 'mix'
+let selectedMixUnits = new Set();
+let mixCount = 30;
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -149,12 +152,21 @@ function renderUnitGrid() {
 
 function selectUnit(unit) {
     currentUnit = unit;
+    flashcardOrigin = 'selection';
     startGame();
 }
 
 function showScreen(screenId) {
     document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
     document.getElementById(screenId).classList.add('active');
+}
+
+function goBackFromFlashcard() {
+    if (flashcardOrigin === 'mix') {
+        showScreen('mix-screen');
+    } else {
+        showScreen('selection-screen');
+    }
 }
 
 function startGame() {
@@ -182,7 +194,7 @@ function nextCard() {
         currentIndex++;
         renderFlashcard();
     } else {
-        showScreen('selection-screen');
+        goBackFromFlashcard();
     }
 }
 
@@ -191,6 +203,70 @@ function prevCard() {
         currentIndex--;
         renderFlashcard();
     }
+}
+
+// Mix Mode Logic
+function showMixScreen() {
+    renderMixUnitGrid();
+    showScreen('mix-screen');
+}
+
+function renderMixUnitGrid() {
+    const grid = document.getElementById('mix-unit-grid');
+    grid.innerHTML = '';
+    
+    Object.keys(VOCAB_DATA).forEach(unit => {
+        const btn = document.createElement('button');
+        btn.className = 'mix-unit-toggle' + (selectedMixUnits.has(unit) ? ' selected' : '');
+        btn.innerText = unit;
+        btn.onclick = () => toggleMixUnit(unit, btn);
+        grid.appendChild(btn);
+    });
+}
+
+function toggleMixUnit(unit, btn) {
+    if (selectedMixUnits.has(unit)) {
+        selectedMixUnits.delete(unit);
+        btn.classList.remove('selected');
+    } else {
+        selectedMixUnits.add(unit);
+        btn.classList.add('selected');
+    }
+}
+
+function setMixCount(count) {
+    mixCount = count;
+    document.querySelectorAll('#mix-count-selector .chip').forEach(chip => {
+        chip.classList.toggle('active',
+            (count === 'all' && chip.innerText === 'All') ||
+            (chip.innerText === count.toString())
+        );
+    });
+}
+
+function startMix() {
+    if (selectedMixUnits.size === 0) {
+        alert('Please select at least one unit!');
+        return;
+    }
+
+    let allWords = [];
+    selectedMixUnits.forEach(unit => {
+        allWords.push(...VOCAB_DATA[unit]);
+    });
+
+    shuffleArray(allWords);
+
+    if (mixCount !== 'all') {
+        allWords = allWords.slice(0, Math.min(mixCount, allWords.length));
+    }
+
+    currentWords = allWords;
+    currentIndex = 0;
+    flashcardOrigin = 'mix';
+
+    renderFlashcard();
+    showScreen('flashcard-screen');
 }
 
 // Helpers

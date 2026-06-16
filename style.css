@@ -347,6 +347,87 @@ h2 {
     left: -100px;
 }
 
+/* Mix Mode */
+.mix-btn-wrapper {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.mix-btn {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.85rem 2.5rem;
+    border-radius: 2rem;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mix-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.mix-icon {
+    font-size: 1.2rem;
+}
+
+.mix-subtitle {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.mix-unit-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.mix-unit-toggle {
+    background: var(--white);
+    border: 2px solid #ddd;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.mix-unit-toggle:hover {
+    border-color: #999;
+}
+
+.mix-unit-toggle.selected {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.start-mix-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.start-mix-btn:hover {
+    background: var(--primary-hover);
+    transform: scale(1.02);
+}
+
 footer {
     margin-top: auto;
     text-align: center;
