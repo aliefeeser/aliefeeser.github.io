@@ -464,3 +464,108 @@ footer {
         font-size: 1.75rem;
     }
 }
+
+/* Theme Toggle Button */
+.theme-toggle {
+    background: var(--white);
+    border: 2px solid #ddd;
+    padding: 0.5rem 1.25rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: var(--transition);
+    color: var(--text-main);
+    margin-bottom: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.theme-toggle:hover {
+    border-color: var(--primary);
+    transform: scale(1.05);
+}
+
+/* Dark Mode */
+body.dark-mode {
+    --primary: #ffffff;
+    --primary-hover: #cccccc;
+    --secondary: #999999;
+    --bg-main: #111111;
+    --text-main: #f0f0f0;
+    --text-light: #aaaaaa;
+    --white: #1a1a1a;
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .app-container {
+    background: rgba(26, 26, 26, 0.9);
+}
+
+body.dark-mode .unit-card {
+    border-color: #333;
+}
+
+body.dark-mode .unit-card:hover {
+    border-color: #fff;
+    box-shadow: 0 6px 20px rgba(255,255,255,0.08);
+}
+
+body.dark-mode .card-face {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .card-face.back {
+    background: linear-gradient(135deg, #333, #555);
+    color: #fff;
+}
+
+body.dark-mode .mix-btn {
+    background: #fff;
+    color: #000;
+}
+
+body.dark-mode .chip {
+    border-color: #444;
+    color: var(--text-main);
+}
+
+body.dark-mode .chip.active {
+    background: #fff;
+    border-color: #fff;
+    color: #000;
+    box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+}
+
+body.dark-mode .mix-unit-toggle {
+    border-color: #333;
+}
+
+body.dark-mode .mix-unit-toggle.selected {
+    background: #fff;
+    border-color: #fff;
+    color: #000;
+}
+
+body.dark-mode .theme-toggle {
+    border-color: #444;
+}
+
+body.dark-mode .blob-1 {
+    background: #333;
+}
+
+body.dark-mode .blob-2 {
+    background: #222;
+}
+
+body.dark-mode .btn.primary {
+    background: #fff;
+    color: #000;
+}
+
+body.dark-mode .start-mix-btn:hover {
+    background: #ddd;
+}

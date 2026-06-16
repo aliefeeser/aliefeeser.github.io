@@ -135,6 +135,10 @@ let mixCount = 30;
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     renderUnitGrid();
+    if (localStorage.getItem('dark-mode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+        updateThemeUI(true);
+    }
 });
 
 function renderUnitGrid() {
@@ -274,5 +278,20 @@ function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+function toggleDarkMode() {
+    const isDark = document.body.classList.toggle('dark-mode');
+    localStorage.setItem('dark-mode', isDark ? 'enabled' : 'disabled');
+    updateThemeUI(isDark);
+}
+
+function updateThemeUI(isDark) {
+    const text = document.getElementById('theme-toggle');
+    if (isDark) {
+        if (text) text.innerHTML = '<span id="theme-icon">☀️</span> Light Mode';
+    } else {
+        if (text) text.innerHTML = '<span id="theme-icon">🌙</span> Dark Mode';
     }
 }
