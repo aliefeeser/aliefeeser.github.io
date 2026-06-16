@@ -14,18 +14,6 @@ const VOCAB_DATA = {
         ["profit", "kâr"], ["prosperity", "refah"], ["purchase", "satın almak"], ["supply chain", "tedarik zinciri"],
         ["transport", "ulaşım, taşımacılık"]
     ],
-    "Essay - Unit 1": [
-        ["accelerated", "hızlandırılmış, ivme kazanmış"], ["adoption", "benimseme, kabul etme"], ["affiliated", "bağlı, ilişkili"],
-        ["attributed to", "atfedilen, kaynaklanan"], ["commodity", "ticari mal, emtia"], ["conducted", "yürütülen, gerçekleştirilen"],
-        ["connotes", "çağrıştırır, ifade eder"], ["convergence", "yakınsama, birleşme"], ["conveying", "iletme, aktarma"],
-        ["deliberate", "kasıtlı, planlı"], ["deprived", "yoksun bırakılmış, mahrum"], ["disparity", "eşitsizlik, farklılık"],
-        ["embrace", "kucaklamak, benimsemek"], ["expedite", "hızlandırmak, kolaylaştırmak"], ["intensity", "yoğunluk, şiddet"],
-        ["interventionist", "müdahaleci"], ["involves", "içerir, kapsar"], ["openness", "açıklık, şeffaflık"],
-        ["penetrate", "nüfuz etmek, sızmak"], ["penetration", "nüfuz etme, sızma"], ["rural", "kırsal"],
-        ["tariffs", "gümrük vergileri, tarifeler"], ["tendency", "eğilim, meyil"], ["unevenly", "eşitsiz bir şekilde"],
-        ["unprecedented", "eşi benzeri görülmemiş"], ["venture", "girişmek, riskli girişim"], ["hence", "bu nedenle, bundan dolayı"],
-        ["compete", "rekabet etmek, yarışmak"], ["facilitating", "kolaylaştıran, olanak sağlayan"], ["cope", "başa çıkmak, üstesinden gelmek"]
-    ],
     "Unit 2": [
         ["adviser", "danışman"], ["campus", "kampüs"], ["complex", "karmaşık"], ["emphasis", "vurgu, önem"],
         ["innovation", "yenilik, inovasyon"], ["institution", "kurum, kuruluş"], ["manual", "manuel, el ile"],
