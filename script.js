@@ -138,12 +138,8 @@ const VOCAB_DATA = {
 
 // State
 let currentUnit = null;
-let currentGameMode = null;
 let currentWords = [];
 let currentIndex = 0;
-let score = 0;
-let quizQuestions = [];
-let quizLength = 5;
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -165,8 +161,7 @@ function renderUnitGrid() {
 
 function selectUnit(unit) {
     currentUnit = unit;
-    document.getElementById('selected-unit-title').innerText = unit;
-    showScreen('mode-screen');
+    startGame();
 }
 
 function showScreen(screenId) {
@@ -174,33 +169,13 @@ function showScreen(screenId) {
     document.getElementById(screenId).classList.add('active');
 }
 
-function setQuizLength(len) {
-    quizLength = len;
-    document.querySelectorAll('.chip').forEach(chip => {
-        chip.classList.toggle('active', 
-            (len === 'all' && chip.innerText === 'All') || 
-            (chip.innerText === len.toString())
-        );
-    });
-}
-
-function startGame(mode) {
-    currentGameMode = mode;
+function startGame() {
     currentWords = [...VOCAB_DATA[currentUnit]];
     shuffleArray(currentWords);
     currentIndex = 0;
-    score = 0;
 
-    if (mode === 'flashcards') {
-        renderFlashcard();
-        showScreen('flashcard-screen');
-    } else {
-        // Handle "all" questions
-        const actualLength = quizLength === 'all' ? currentWords.length : Math.min(quizLength, currentWords.length);
-        generateQuiz(actualLength);
-        renderQuizQuestion(actualLength);
-        showScreen('quiz-screen');
-    }
+    renderFlashcard();
+    showScreen('flashcard-screen');
 }
 
 // Flashcard Logic
@@ -228,72 +203,6 @@ function prevCard() {
         currentIndex--;
         renderFlashcard();
     }
-}
-
-// Quiz Logic
-function generateQuiz(limit) {
-    quizQuestions = currentWords.slice(0, limit).map(word => {
-        const options = [word[1]];
-        const others = Object.values(VOCAB_DATA).flat().filter(w => w[1] !== word[1]);
-        shuffleArray(others);
-        options.push(...others.slice(0, 3).map(w => w[1]));
-        shuffleArray(options);
-        return {
-            question: word[0],
-            answer: word[1],
-            options: options
-        };
-    });
-}
-
-function renderQuizQuestion(limit) {
-    const q = quizQuestions[currentIndex];
-    const total = limit || quizQuestions.length;
-    document.getElementById('quiz-question').innerText = `How do you say "${q.question}" in Turkish?`;
-    document.getElementById('current-score').innerText = score;
-    document.getElementById('quiz-progress-fill').style.width = `${(currentIndex / total) * 100}%`;
-
-    const grid = document.getElementById('options-grid');
-    grid.innerHTML = '';
-    
-    q.options.forEach(opt => {
-        const btn = document.createElement('button');
-        btn.className = 'option-btn';
-        btn.innerText = opt;
-        btn.onclick = () => handleAnswer(opt, btn, total);
-        grid.appendChild(btn);
-    });
-}
-
-function handleAnswer(selected, btn, total) {
-    const correctAnswer = quizQuestions[currentIndex].answer;
-    const allButtons = document.querySelectorAll('.option-btn');
-    
-    allButtons.forEach(b => b.style.pointerEvents = 'none');
-
-    if (selected === correctAnswer) {
-        btn.classList.add('correct');
-        score++;
-    } else {
-        btn.classList.add('incorrect');
-        allButtons.forEach(b => {
-            if (b.innerText === correctAnswer) b.classList.add('correct');
-        });
-    }
-
-    setTimeout(() => {
-        currentIndex++;
-        if (currentIndex < total) {
-            renderQuizQuestion(total);
-        } else {
-            showResults(total);
-        }
-    }, 1200);
-}
-
-function showResults(total) {
-    document.getElementById('final-score').innerText = `${score} / ${total}`;
-    showScreen('result-screen');
 }
 
 // Helpers

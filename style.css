@@ -1,12 +1,12 @@
 :root {
-    --primary: #6366f1;
-    --primary-hover: #4f46e5;
-    --secondary: #64748b;
-    --bg-main: #f8fafc;
-    --text-main: #1e293b;
-    --text-light: #64748b;
+    --primary: #000000;
+    --primary-hover: #333333;
+    --secondary: #666666;
+    --bg-main: #f0f0f0;
+    --text-main: #000000;
+    --text-light: #555555;
     --white: #ffffff;
-    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -334,13 +334,13 @@ h2 {
 }
 
 .blob-1 {
-    background: #a5b4fc;
+    background: #cccccc;
     top: -100px;
     right: -100px;
 }
 
 .blob-2 {
-    background: #ddd6fe;
+    background: #e0e0e0;
     bottom: -100px;
     left: -100px;
 }
